@@ -125,7 +125,7 @@ function sortChocolateBasedOnCount(chocolates)
     let arr5 = ['red', 'blue', 'green', 'red'];
     for (let i = 0; i < chocolates.length; i++)
     {
-        var count = 0;
+        var count = 1;
         for (let j = 0; j < arr5.length; j++)
         {
             if (chocolates[i] == arr5[j]) 
@@ -135,6 +135,7 @@ function sortChocolateBasedOnCount(chocolates)
             }
         }
     }
+    return Array4;
 }
 //Progression 7: Change ___ chocolates of ____ color to ____ color
 
