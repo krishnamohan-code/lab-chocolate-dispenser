@@ -120,22 +120,30 @@ function noOfChocolates(chocolates) {
 //Progression 6: Sort chocolates based on count in each color. Return array of colors
 
 function sortChocolateBasedOnCount(chocolates)
- {
-    let Array4 = [];
-    let arr5 = ['red', 'blue', 'green', 'red'];
-    for (let i = 0; i < chocolates.length; i++)
-    {
-        var count = 1;
-        for (let j = 0; j < arr5.length; j++)
-        {
-            if (chocolates[i] == arr5[j]) 
-            {
-                count++;
-                Array4.push(count) 
-            }
+{
+    let cho = chocolates.reduce(function (b, a) {
+        if (a in b) {
+            b[a]++;
+        } else {
+            b[a] = 1;
         }
-    }
-    return Array4;
+        return b;
+    }, {});
+    let Array = chocolates.sort((a, b) => {
+        if (cho[b] > cho[a]) {
+            return 1;
+        }
+        if (cho[b] < cho[a]) {
+            return -1;
+        }
+        if (a > b) {
+            return 1;
+        }
+        if (a < b) {
+            return -1;
+        }
+    });
+    chocolates = Array;
 }
 //Progression 7: Change ___ chocolates of ____ color to ____ color
 
